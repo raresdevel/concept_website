@@ -8,6 +8,33 @@
 		<meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		
+		<!-- Calling weather API -->
+		<!-- Sourcecode found in: https://www.visualcrossing.com/resources/documentation/weather-api/how-do-i-add-weather-forecast-to-my-webpage/ -->
+		<div class="weatherWidget" ></div>
+
+		<script>
+		window.weatherWidgetConfig =  window.weatherWidgetConfig || [];
+		window.weatherWidgetConfig.push({
+			selector:".weatherWidget",
+			apiKey:"TPNKHH3Q7HXRGQXQ37HRSUBFJ", //Sign up for your personal key
+			location:"Dublin, IE", //Enter an address
+			unitGroup:"metric", //"us" or "metric"
+			forecastDays:5, //how many days forecast to show
+			title:"Dublin, IE", //optional title to show in the 
+			showTitle:true, 
+			showConditions:true
+		});
+		
+		(function() {
+		var d = document, s = d.createElement('script');
+		s.src = 'https://www.visualcrossing.com/widgets/forecast-simple/weather-forecast-widget-simple.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+		})();
+		</script>
+
+		<!-- End of weather API script -->
+		
 		<div id="h1">
 			<title>Construction Monitoring Project</title>
 		</div>
@@ -115,6 +142,7 @@
 
 			</div>
 		</section>
+
 		<div id="myModal" class="modal">
 			<span class="close" onclick="closeModal()">&times;</span>
 			<img class="modal-content" id="./images/">
